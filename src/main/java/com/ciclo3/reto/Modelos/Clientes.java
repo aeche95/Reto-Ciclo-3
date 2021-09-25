@@ -1,12 +1,34 @@
-package com.ciclo3.reto.Pagina.DTO.Pagina;
+package com.ciclo3.reto.Modelos;
 
-public class ClienteVO {
-	
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="Clientes")
+public class Clientes {
+	 @Id
+	 @GeneratedValue(strategy= GenerationType.IDENTITY)
 	 private Integer idCliente;
 	 private String nombreCliente;
 	 private String apellidoCliente;
 	 
-	 /**
+	 
+	 
+	 public Clientes() {
+		super();
+	}
+
+	public Clientes(Integer idCliente, String nombreCliente, String apellidoCliente) {
+		super();
+		this.idCliente = idCliente;
+		this.nombreCliente = nombreCliente;
+		this.apellidoCliente = apellidoCliente;
+	}
+
+	/**
 	  * @return the idCliente
 	  */
 	 public Integer getIdCliente() {

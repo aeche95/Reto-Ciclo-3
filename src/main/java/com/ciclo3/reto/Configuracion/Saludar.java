@@ -1,4 +1,4 @@
-package com.ciclo3.reto.Pagina.BO.Pagina;
+package com.ciclo3.reto.Configuracion;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

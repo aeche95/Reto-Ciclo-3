@@ -1,13 +1,43 @@
-package com.ciclo3.reto.Pagina.DTO.Pagina;
+package com.ciclo3.reto.Modelos;
 
-public class ProveedorVO {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Proveedores")
+public class Proveedores {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idProveedor;
 	private Integer NITProveedor;
 	private String  NombreProveedor;
 	private String DireccionProveedor;
 	private Integer TelefonoProveedor;
 	private String CiudadProveedor;
+	
+	
+	
+	public Proveedores() {
+		super();
+	}
+
+
+	public Proveedores(Integer idProveedor, Integer nITProveedor, String nombreProveedor, String direccionProveedor,
+			Integer telefonoProveedor, String ciudadProveedor) {
+		super();
+		this.idProveedor = idProveedor;
+		NITProveedor = nITProveedor;
+		NombreProveedor = nombreProveedor;
+		DireccionProveedor = direccionProveedor;
+		TelefonoProveedor = telefonoProveedor;
+		CiudadProveedor = ciudadProveedor;
+	}
+	
+	
 	/**
 	 * @return the idProveedor
 	 */

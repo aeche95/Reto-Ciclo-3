@@ -1,4 +1,4 @@
-package com.ciclo3.reto.Pagina.DAO.Pagina;
+package com.ciclo3.reto.DAO;
 
 import java.sql.*;
 

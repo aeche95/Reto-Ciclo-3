@@ -1,4 +1,4 @@
-package com.ciclo3.reto.Pagina.BO.Pagina;
+package com.ciclo3.reto.Configuracion;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,8 +8,8 @@ import org.springframework.boot.json.JsonParser;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ciclo3.reto.Pagina.DAO.Pagina.ClienteDAO;
-import com.ciclo3.reto.Pagina.DTO.Pagina.ClienteVO;
+import com.ciclo3.reto.DAO.ClienteDAO;
+import com.ciclo3.reto.Modelos.Clientes;
 import com.fasterxml.jackson.databind.JsonNode;
 
 
@@ -19,7 +19,7 @@ public class ClienteController {
 	
 	
 	@RequestMapping("/registrarPersona")
-	public void registrarPersona(ClienteVO persona) 
+	public void registrarPersona(Clientes persona) 
 	 {
 		ClienteDAO Dao=new ClienteDAO(); 
 	    Dao.registrarPersona(persona);
@@ -36,7 +36,7 @@ public class ClienteController {
 	 */
 	
 	@RequestMapping("/consultarPersona")
-	public ArrayList<ClienteVO> consultarPersona(int documento) {
+	public ArrayList<Clientes> consultarPersona(int documento) {
 		ClienteDAO Dao=new ClienteDAO(); 
 	return 	Dao.consultarPersona(documento);
 		
@@ -49,7 +49,7 @@ public class ClienteController {
 	 * @return
 	 */
 	@RequestMapping("/listarPersonas")
-	public ArrayList< ClienteVO> listaDePersonas() {
+	public ArrayList< Clientes> listaDePersonas() {
 		ClienteDAO Dao=new ClienteDAO(); 
 			
 		return Dao.listaDePersonas();

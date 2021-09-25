@@ -1,4 +1,4 @@
-package com.ciclo3.reto.Pagina.DAO.Pagina;
+package com.ciclo3.reto.DAO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,8 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import com.ciclo3.reto.Pagina.BO.Pagina.*;
-import com.ciclo3.reto.Pagina.DTO.Pagina.ClienteVO;
+
+import com.ciclo3.reto.Configuracion.*;
+import com.ciclo3.reto.Modelos.Clientes;
 
 
 /**
@@ -24,7 +25,7 @@ public class ClienteDAO
   */
 	
 	
- public void registrarPersona(ClienteVO persona) 
+ public void registrarPersona(Clientes persona) 
  {
   Conexion conex= new Conexion();
   try {
@@ -49,8 +50,8 @@ public class ClienteDAO
  * @param documento 
  * @return
  */
-public ArrayList<ClienteVO> consultarPersona(int documento) {
-  ArrayList< ClienteVO> miCliente = new ArrayList< ClienteVO>();
+public ArrayList<Clientes> consultarPersona(int documento) {
+  ArrayList< Clientes> miCliente = new ArrayList< Clientes>();
   Conexion conex= new Conexion();
     
   try {
@@ -59,7 +60,7 @@ public ArrayList<ClienteVO> consultarPersona(int documento) {
    ResultSet res = consulta.executeQuery();
    
   if(res.next()){
-    ClienteVO persona= new ClienteVO();
+    Clientes persona= new Clientes();
     persona.setIdCliente(Integer.parseInt(res.getString("idCliente")));
     persona.setNombreCliente(res.getString("Nombre"));
     persona.setApellidoCliente(res.getString("Apellido"));
@@ -82,15 +83,15 @@ public ArrayList<ClienteVO> consultarPersona(int documento) {
  * permite consultar la lista de Clientes
  * @return
  */
-public ArrayList< ClienteVO> listaDePersonas() {
-  ArrayList< ClienteVO> miCliente = new ArrayList< ClienteVO>();
+public ArrayList< Clientes> listaDePersonas() {
+  ArrayList< Clientes> miCliente = new ArrayList< Clientes>();
   Conexion conex= new Conexion();
     
   try {
    PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM Cliente");
    ResultSet res = consulta.executeQuery();
    while(res.next()){
-    ClienteVO persona= new ClienteVO();
+    Clientes persona= new Clientes();
     persona.setIdCliente(Integer.parseInt(res.getString("idCliente")));
     persona.setNombreCliente(res.getString("nombre"));
     persona.setApellidoCliente(res.getString("Apellido"));

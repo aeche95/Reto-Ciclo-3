@@ -1,4 +1,4 @@
-package com.ciclo3.reto.Pagina.BO.Pagina;
+package com.ciclo3.reto.Configuracion;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
