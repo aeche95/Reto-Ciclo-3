@@ -1,4 +1,4 @@
-package com.ciclo3.reto.Pagina.Interfaces;
+package com.ciclo3.reto.Interfaces;
 
 import org.springframework.data.repository.CrudRepository;
 
