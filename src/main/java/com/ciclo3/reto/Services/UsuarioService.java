@@ -15,9 +15,9 @@ public class UsuarioService {
 	@Autowired
 	UsuariosRepository UsuariosRepo;
 	
-	public UsuarioModel GuardarCliente(UsuarioModel cliente)
+	public UsuarioModel GuardarUsuario(UsuarioModel usuario)
 	{
-		return UsuariosRepo.save(cliente);
+		return UsuariosRepo.save(usuario);
 	}
 	
 	public Optional<UsuarioModel> ObtenerPorId (Long Id)
@@ -25,12 +25,12 @@ public class UsuarioService {
 		return UsuariosRepo.findById(Id);
 	}
 	
-	public ArrayList<UsuarioModel> ObtenerClientes()
+	public ArrayList<UsuarioModel> ObtenerUsuarios()
 	{
 		return (ArrayList<UsuarioModel>) UsuariosRepo.findAll();
 	}
 	
-	public boolean EliminarCliente(Long Id)
+	public boolean EliminarUsuario(Long Id)
 	{
 		try
 		{

@@ -1,4 +1,4 @@
-package com.ciclo3.reto.Configuracion;
+package com.ciclo3.reto.Controllers;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ciclo3.reto.Modelos.ClienteModel;
 import com.ciclo3.reto.Services.ClienteService;
-
-
 
 @RestController
 @RequestMapping("/clientes")

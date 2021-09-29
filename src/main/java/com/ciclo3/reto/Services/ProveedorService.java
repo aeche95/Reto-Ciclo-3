@@ -15,9 +15,9 @@ public class ProveedorService {
 	@Autowired
 	ProveedoresRepository ProveedoresRepo;
 	
-	public ProveedorModel GuardarCliente(ProveedorModel cliente)
+	public ProveedorModel GuardarProveedor(ProveedorModel proveedor)
 	{
-		return ProveedoresRepo.save(cliente);
+		return ProveedoresRepo.save(proveedor);
 	}
 	
 	public Optional<ProveedorModel> ObtenerPorId (Long Id)
@@ -25,12 +25,12 @@ public class ProveedorService {
 		return ProveedoresRepo.findById(Id);
 	}
 	
-	public ArrayList<ProveedorModel> ObtenerClientes()
+	public ArrayList<ProveedorModel> ObtenerProveedores()
 	{
 		return (ArrayList<ProveedorModel>) ProveedoresRepo.findAll();
 	}
 	
-	public boolean EliminarCliente(Long Id)
+	public boolean EliminarProveedor(Long Id)
 	{
 		try
 		{
