@@ -8,11 +8,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Proveedores")
-public class Proveedores {
+public class ProveedorModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idProveedor;
+	private Long idProveedor;
 	private Integer NITProveedor;
 	private String  NombreProveedor;
 	private String DireccionProveedor;
@@ -21,12 +21,12 @@ public class Proveedores {
 	
 	
 	
-	public Proveedores() {
+	public ProveedorModel() {
 		super();
 	}
 
 
-	public Proveedores(Integer idProveedor, Integer nITProveedor, String nombreProveedor, String direccionProveedor,
+	public ProveedorModel(Long idProveedor, Integer nITProveedor, String nombreProveedor, String direccionProveedor,
 			Integer telefonoProveedor, String ciudadProveedor) {
 		super();
 		this.idProveedor = idProveedor;
@@ -41,13 +41,13 @@ public class Proveedores {
 	/**
 	 * @return the idProveedor
 	 */
-	public Integer getIdProveedor() {
+	public Long getIdProveedor() {
 		return idProveedor;
 	}
 	/**
 	 * @param idProveedor the idProveedor to set
 	 */
-	public void setIdProveedor(Integer idProveedor) {
+	public void setIdProveedor(Long idProveedor) {
 		this.idProveedor = idProveedor;
 	}
 	/**

@@ -5,7 +5,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id; 
  
 @Entity 
-public class Usuarios { 
+public class UsuarioModel { 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long cedula_usuario; 

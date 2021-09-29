@@ -2,8 +2,8 @@ package com.ciclo3.reto.Interfaces;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.ciclo3.reto.Modelos.Proveedores;
+import com.ciclo3.reto.Modelos.ProveedorModel;
 
-public interface ProveedoresRepository extends CrudRepository<Proveedores,Integer> {
+public interface ProveedoresRepository extends CrudRepository<ProveedorModel,Long> {
 
 }

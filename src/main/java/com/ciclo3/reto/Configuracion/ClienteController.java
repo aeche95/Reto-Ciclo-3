@@ -1,60 +1,61 @@
 package com.ciclo3.reto.Configuracion;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Optional;
 
-import org.springframework.boot.json.GsonJsonParser;
-import org.springframework.boot.json.JsonParser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ciclo3.reto.DAO.ClienteDAO;
-import com.ciclo3.reto.Modelos.Clientes;
-import com.fasterxml.jackson.databind.JsonNode;
+import com.ciclo3.reto.Modelos.ClienteModel;
+import com.ciclo3.reto.Services.ClienteService;
 
 
 
 @RestController
+@RequestMapping("/clientes")
 public class ClienteController {
 	
+	@Autowired
+	ClienteService clienteService;
 	
-	@RequestMapping("/registrarPersona")
-	public void registrarPersona(Clientes persona) 
-	 {
-		ClienteDAO Dao=new ClienteDAO(); 
-	    Dao.registrarPersona(persona);
-	    
-	 }
-	   
-	 
-	 
-	/**
-	 * permite consultar el Cliente asociado al documento enviado
-	 * como parametro 
-	 * @param documento 
-	 * @return
-	 */
+	@GetMapping
+	public ArrayList<ClienteModel> obtenerClientes()
+	{
+		return clienteService.ObtenerClientes();
+	}
 	
-	@RequestMapping("/consultarPersona")
-	public ArrayList<Clientes> consultarPersona(int documento) {
-		ClienteDAO Dao=new ClienteDAO(); 
-	return 	Dao.consultarPersona(documento);
+	@PostMapping
+	public ClienteModel CrearCliente(@RequestBody ClienteModel cliente)
+	{
+		return clienteService.GuardarCliente(cliente);
+	}
+	
+	@GetMapping(path="{id}")
+	public Optional<ClienteModel> ObtenerPorId(@PathVariable("id") Long Id)
+	{
+		return clienteService.ObtenerPorId(Id);
+	}
+	
+	@DeleteMapping(path="{id}")
+	public String EliminarPorId(@PathVariable("id") Long Id)
+	{
+		boolean Eliminado = clienteService.EliminarCliente(Id);
+		
+		if(Eliminado)
+		{
+			return "Cliente eliminado";
+		}
+		else
+		{
+			return "Error al eliminar cliente";
+		}
 		
 	}
-
-
-
-	/**
-	 * permite consultar la lista de Clientes
-	 * @return
-	 */
-	@RequestMapping("/listarPersonas")
-	public ArrayList< Clientes> listaDePersonas() {
-		ClienteDAO Dao=new ClienteDAO(); 
-			
-		return Dao.listaDePersonas();
-		
-	}
-
-
+	
 }

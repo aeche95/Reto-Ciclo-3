@@ -8,20 +8,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name ="Clientes")
-public class Clientes {
+public class ClienteModel {
 	 @Id
 	 @GeneratedValue(strategy= GenerationType.IDENTITY)
-	 private Integer idCliente;
+	 private Long idCliente;
 	 private String nombreCliente;
 	 private String apellidoCliente;
 	 
 	 
 	 
-	 public Clientes() {
+	 public ClienteModel() {
 		super();
 	}
 
-	public Clientes(Integer idCliente, String nombreCliente, String apellidoCliente) {
+	public ClienteModel(Long idCliente, String nombreCliente, String apellidoCliente) {
 		super();
 		this.idCliente = idCliente;
 		this.nombreCliente = nombreCliente;
@@ -31,14 +31,14 @@ public class Clientes {
 	/**
 	  * @return the idCliente
 	  */
-	 public Integer getIdCliente() {
+	 public Long getIdCliente() {
 	  return idCliente;
 	 }
 	 
 	 /**
 	  * @param idCliente the idCliente to set
 	  */
-	 public void setIdCliente(Integer idCliente) {
+	 public void setIdCliente(Long idCliente) {
 	  this.idCliente = idCliente;
 	 }
 	 
