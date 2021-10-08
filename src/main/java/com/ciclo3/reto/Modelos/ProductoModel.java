@@ -133,8 +133,30 @@ public class ProductoModel {
 	}
 
 
+	public ProductoModel(Long idProducto, Long codigo_producto, String nombre_producto, Long nit_proveedor,
+			double precio_compra, double iva_compra, double precio_venta) {
+		super();
+		this.idProducto = idProducto;
+		this.codigo_producto = codigo_producto;
+		this.nombre_producto = nombre_producto;
+		Nit_proveedor = nit_proveedor;
+		this.precio_compra = precio_compra;
+		this.iva_compra = iva_compra;
+		this.precio_venta = precio_venta;
+	}
+
+
 	public ProductoModel() {
 		// TODO Auto-generated constructor stub
 	}
+
+
+	@Override
+	public String toString() {
+		return "ProductoModel [idProducto=" + idProducto + ", codigo_producto=" + codigo_producto + ", nombre_producto="
+				+ nombre_producto + ", Nit_proveedor=" + Nit_proveedor + ", precio_compra=" + precio_compra
+				+ ", iva_compra=" + iva_compra + ", precio_venta=" + precio_venta + "]";
+	}
+	
 
 }

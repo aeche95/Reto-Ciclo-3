@@ -30,7 +30,7 @@ public class ProductoController {
 	}
 
 	@PostMapping
-	public ProductoModel CrearCliente(@RequestBody ProductoModel producto)
+	public ProductoModel CrearProducto(@RequestBody ProductoModel producto)
 	{
 		return productoService.GuardarProducto(producto);
 	}
