@@ -15,7 +15,7 @@ public class ProductoModel {
 	private Long idProducto;
 	private Long codigo_producto;
 	private String nombre_producto;
-	private Long Nit_proveedor;
+	private Long nitproveedor;
 	private double precio_compra;
 	private double iva_compra;
 	private double precio_venta;
@@ -73,7 +73,7 @@ public class ProductoModel {
 	 * @return the nit_proveedor
 	 */
 	public Long getNit_proveedor() {
-		return Nit_proveedor;
+		return nitproveedor;
 	}
 
 
@@ -81,7 +81,7 @@ public class ProductoModel {
 	 * @param nit_proveedor the nit_proveedor to set
 	 */
 	public void setNit_proveedor(Long nit_proveedor) {
-		Nit_proveedor = nit_proveedor;
+		nitproveedor = nit_proveedor;
 	}
 
 
@@ -139,7 +139,7 @@ public class ProductoModel {
 		this.idProducto = idProducto;
 		this.codigo_producto = codigo_producto;
 		this.nombre_producto = nombre_producto;
-		Nit_proveedor = nit_proveedor;
+		this.nitproveedor = nit_proveedor;
 		this.precio_compra = precio_compra;
 		this.iva_compra = iva_compra;
 		this.precio_venta = precio_venta;
@@ -154,7 +154,7 @@ public class ProductoModel {
 	@Override
 	public String toString() {
 		return "ProductoModel [idProducto=" + idProducto + ", codigo_producto=" + codigo_producto + ", nombre_producto="
-				+ nombre_producto + ", Nit_proveedor=" + Nit_proveedor + ", precio_compra=" + precio_compra
+				+ nombre_producto + ", Nit_proveedor=" + nitproveedor + ", precio_compra=" + precio_compra
 				+ ", iva_compra=" + iva_compra + ", precio_venta=" + precio_venta + "]";
 	}
 	
