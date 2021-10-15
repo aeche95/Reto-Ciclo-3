@@ -10,7 +10,7 @@ import java.sql.*;
 public class Conexion {
    /**Parametros de conexion*/
    static String bd = "tienda";
-   static String login = "EQUIPO3";
+   static String login = "equipo3";
    static String password = "G563qu1p03*";
    static String url = "jdbc:mysql://grupo56.czo3ixoe3xoe.us-east-1.rds.amazonaws.com";
 
@@ -43,5 +43,5 @@ public class Conexion {
 
    public void desconectar(){
       connection = null;
-   }
+   } 
 }
