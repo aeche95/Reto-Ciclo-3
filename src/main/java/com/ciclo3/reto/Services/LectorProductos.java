@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,9 +30,10 @@ public class LectorProductos {
 
     public void leerArchivo() throws IOException {
         String linea = "";
+        int i = 0;
         while ((linea = br.readLine()) != null) {
             procesarCadena(linea);
-            
+            i++;
         }
     }
 

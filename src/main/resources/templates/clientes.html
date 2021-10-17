@@ -17,11 +17,12 @@
       <nav>
         <div id="menu">
             <ul>
-                <li id ="item"><a href="#">Usuarios</a></li>
-                <li id ="item"><a href="#">Clientes</a></li>
-                <li id ="item"><a href="#"> Proveedores</a></li>
-                <li id ="item"><a href="#"> Ventas</a></li>
-                <li id ="item"><a href="#"> Resportes</a></li>    
+                <li id ="item"><a href="usuarios.html">Usuarios</a></li>
+                <li id ="item"><a href="clientes.html">Clientes</a></li>
+                <li id ="item"><a href="proveedores.html"> Proveedores</a></li>
+				<li id ="item"><a href="productos.html"> Productos</a></li>
+                <li id ="item"><a href="ventas.html"> Ventas</a></li>
+                <li id ="item"><a href="reportes.html"> Resportes</a></li>    
             </ul>    
         </div>
       </nav>
@@ -29,7 +30,7 @@
 
 <div class="jumbotron text-center">
   <h1>CONFIGURACION</h1>
-  <h1>DE USUARIOS</h1>
+  <h1>DE CLIENTES</h1>
   <h2><i class="fas fa-users-cog fa-4x"></i></h2> 
 </div>
   
@@ -44,21 +45,21 @@
     <thead>
       <tr>
         <th>Cedula</th>
-        <th><input type="text" id="ndoc" name="ndoc"></th>
-		<th>Usuario</th>
-		<th><input type="text" id="user" name="user"></th>
+        <th><input type="text" id="cedula" name="cedula"></th>
+		<th>Telefono</th>
+		<th><input type="text" id="telefono" name="telefono"></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th>Nombre Completo</th>
-        <th><input type="text" id="fname" name="fname"></th>
-		<th>Contraseña</th>
-        <td><input type="text" id="pass" name="pass"></td>
+        <th>Nombre Proveedor</th>
+        <th><input type="text" id="proveedor" name="proveedor"></th>
+		<th>Ciudad</th>
+        <td><input type="text" id="ciudad" name="ciudad"></td>
       </tr>
       <tr>
-        <th>Correo Electronico</th>
-        <th><input type="text" id="email" name="email"></th>
+        <th>Direccion</th>
+        <th><input type="text" id="direccion" name="direccion"></th>
         <td></td>
 		<td></td>
       </tr>
@@ -72,7 +73,7 @@
 		<td><button type="button" class="btn btn-secondary">Consultar</button></td>
         <td><button type="button" class="btn btn-secondary">Crear</button></td>
         <td><button type="button" class="btn btn-secondary">Actualizar</button></td>
-        <td><button type="button" class="btn btn-secondary">Borrar</button></td>
+        <td><button type="reset" class="btn btn-secondary">Borrar</button></td>
       </tr>
     </tbody>
 	</table>

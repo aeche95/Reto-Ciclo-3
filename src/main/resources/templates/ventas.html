@@ -38,13 +38,13 @@
   
 <div class="container">
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-sm-1">
 	
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-10">
 	<form>
     <table class="table table-borderless">
-    <thead>
+
       <tr>
         <th>Cedula</th>
         <th><input type="text" id="cedula" name="cedula"></th>
@@ -53,38 +53,65 @@
 		<th><input type="text" id="cliente" name="cliente"></th>
 		<th>Consec</th>
 		<th><input type="text" id="consec" name="consec"></th>
-      </tr>
-    </thead>
+      </tr>  
+
+	</table>	
+    <table class="table table-borderless">
     <tbody>
       <tr>
-        <th>Nombre Proveedor</th>
-        <th><input type="text" id="proveedor" name="proveedor"></th>
-		<th>Ciudad</th>
-        <td><input type="text" id="ciudad" name="ciudad"></td>
+        <th colspan="2">Cod. Producto</th>
+		<th>Nombre Producto</th>
+		<th>Cant</th>
+		<th>Vlr. Total</th>
       </tr>
       <tr>
-        <th>Direccion</th>
-        <th><input type="text" id="direccion" name="direccion"></th>
-        <td></td>
-		<td></td>
-      </tr>
-      <tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>	  
+        <th><input type="text" id="cdprod" name="cdprod"></th>
 		<td><button type="button" class="btn btn-secondary">Consultar</button></td>
-        <td><button type="button" class="btn btn-secondary">Crear</button></td>
-        <td><button type="button" class="btn btn-secondary">Actualizar</button></td>
-        <td><button type="reset" class="btn btn-secondary">Borrar</button></td>
+		<th><input type="text" id="nomprod" name="nomprod"></th>
+		<th><input type="text" id="cant" name="cant"></th>
+		<th><input type="text" id="vtotal" name="vtotal"></th>
       </tr>
+      <tr>
+        <th><input type="text" id="cdprod" name="cdprod"></th>
+		<td><button type="button" class="btn btn-secondary">Consultar</button></td>
+		<th><input type="text" id="nomprod" name="nomprod"></th>
+		<th><input type="text" id="cant" name="cant"></th>
+		<th><input type="text" id="vtotal" name="vtotal"></th>
+      </tr>
+      <tr>
+        <th><input type="text" id="cdprod" name="cdprod"></th>
+		<td><button type="button" class="btn btn-secondary">Consultar</button></td>
+		<th><input type="text" id="nomprod" name="nomprod"></th>
+		<th><input type="text" id="cant" name="cant"></th>
+		<th><input type="text" id="vtotal" name="vtotal"></th>
+      </tr>	  
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+	  
+      <tr>
+	  	<th  colspan="3"></th>
+		<th>Total Venta</th>
+		<th><input type="text" id="vtotal" name="vtotal"></th>
+      </tr>
+      <tr>
+	  	<th  colspan="3"></th>
+		<th>Total IVA</th>
+		<th><input type="text" id="vtotal" name="vtotal"></th>
+      </tr>
+      <tr>
+		<th colspan="3"><button type="button" class="btn btn-secondary">Confirmar</button></th>
+		<th>Total con IVA</th>
+		<th><input type="text" id="vtotal" name="vtotal"></th>
+      </tr>	  
+
     </tbody>
 	</table>
 	</form>
     </div>
-    <div class="col-sm-2">
+    <div class="col-sm-1">
       
     </div>
   </div>
