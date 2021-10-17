@@ -1,4 +1,4 @@
-package com.ciclo3.reto.Configuracion;
+package com.ciclo3.reto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
