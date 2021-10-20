@@ -49,12 +49,12 @@ public class DetalleVentaModel implements Serializable {
 	private Double valor_iva;
 	
 	@ManyToOne (fetch= FetchType.LAZY)
-	@JoinColumn(name="Ventas_idVentas", referencedColumnName="idVentas", columnDefinition="bigint(20)")
-	private VentasModel ventasIdVentas;
+	@JoinColumn(name="FK_idVentas", referencedColumnName="idVentas", columnDefinition="bigint(20)")
+	private VentasModel IdVentas;
 
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="Productos_codigo_productos", referencedColumnName="codigo_productos", columnDefinition="bigint(20)")
-	private ProductoModel productosCodigoProductos;
+	@JoinColumn(name="FK_codigo_productos", referencedColumnName="codigo_productos", columnDefinition="bigint(20)")
+	private ProductoModel CodigoProductos;
 
 	public Long getCodigoDetalleVenta() {
 		return codigoDetalleVenta;
@@ -113,19 +113,19 @@ public class DetalleVentaModel implements Serializable {
 	}
 
 	public VentasModel getVentasIdVentas() {
-		return ventasIdVentas;
+		return IdVentas;
 	}
 
 	public void setVentasIdVentas(VentasModel ventasIdVentas) {
-		this.ventasIdVentas = ventasIdVentas;
+		this.IdVentas = ventasIdVentas;
 	}
 
 	public ProductoModel getProductosCodigoProductos() {
-		return productosCodigoProductos;
+		return CodigoProductos;
 	}
 
 	public void setProductosCodigoProductos(ProductoModel productosCodigoProductos) {
-		this.productosCodigoProductos = productosCodigoProductos;
+		this.CodigoProductos = productosCodigoProductos;
 	}
 
 	

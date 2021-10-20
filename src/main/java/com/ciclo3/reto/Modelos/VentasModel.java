@@ -8,6 +8,7 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -35,10 +36,12 @@ public class VentasModel implements Serializable {
 	@Column(name="valor_venta", columnDefinition="double")
 	private double valor_venta;
 	
-	@Column(name="cedula_cliente", columnDefinition="bigint(20)")
+	@OneToOne
+	@Column(name="FK_cedula_cliente", columnDefinition="bigint(20)")
 	private long cedula_cliente;
 	
-	@Column(name="cedula_usuario", columnDefinition="bigint(20)")
+	@OneToOne
+	@Column(name="FK_cedula_usuario", columnDefinition="bigint(20)")
 	private long cedula_usuario;
 	
 	

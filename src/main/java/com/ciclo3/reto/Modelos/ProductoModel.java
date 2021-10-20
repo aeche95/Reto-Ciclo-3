@@ -6,6 +6,7 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -26,7 +27,8 @@ public class ProductoModel {
 	@Column(name="nombre_producto", columnDefinition="varchar(255)")
 	private String nombre_producto;
 	
-	@Column(name="nit_proveedor", columnDefinition="bigint(20)")
+	@ManyToOne
+	@Column(name="FK_nit_proveedor", columnDefinition="bigint(20)")
 	private Long nit_proveedor;
 	
 	@Column(name="precio_compra", columnDefinition="double")
