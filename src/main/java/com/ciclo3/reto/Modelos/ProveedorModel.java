@@ -1,23 +1,39 @@
 package com.ciclo3.reto.Modelos;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 @Entity
-@Table(name="Proveedores")
+@Table(name="proveedores")
+@EntityListeners(AuditingEntityListener.class)
 public class ProveedorModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idProveedor;
-	private Integer NITProveedor;
-	private String  NombreProveedor;
-	private String DireccionProveedor;
-	private Integer TelefonoProveedor;
-	private String CiudadProveedor;
+	@Column(name="id_proveedor", columnDefinition="bigint(20)")
+	private Long id_proveedor;
+	
+	@Column(name="nit_proveedor", columnDefinition="bigint(20)")
+	private Integer nit_proveedor;
+	
+	@Column(name="nombre_proveedor", columnDefinition="varchar(255)")
+	private String  nombre_proveedor;
+	
+	@Column(name="direccion_proveedor", columnDefinition="varchar(255)")
+	private String direccion_proveedor;
+	
+	@Column(name="telefono_proveedor", columnDefinition="varchar(255)")
+	private Integer telefono_proveedor;
+	
+	@Column(name="ciudad_proveedor", columnDefinition="varvhar(255)")
+	private String ciudad_proveedor;
 	
 	
 	
@@ -29,12 +45,12 @@ public class ProveedorModel {
 	public ProveedorModel(Long idProveedor, Integer nITProveedor, String nombreProveedor, String direccionProveedor,
 			Integer telefonoProveedor, String ciudadProveedor) {
 		super();
-		this.idProveedor = idProveedor;
-		NITProveedor = nITProveedor;
-		NombreProveedor = nombreProveedor;
-		DireccionProveedor = direccionProveedor;
-		TelefonoProveedor = telefonoProveedor;
-		CiudadProveedor = ciudadProveedor;
+		this.id_proveedor = idProveedor;
+		nit_proveedor = nITProveedor;
+		nombre_proveedor = nombreProveedor;
+		direccion_proveedor = direccionProveedor;
+		telefono_proveedor = telefonoProveedor;
+		ciudad_proveedor = ciudadProveedor;
 	}
 	
 	
@@ -42,72 +58,72 @@ public class ProveedorModel {
 	 * @return the idProveedor
 	 */
 	public Long getIdProveedor() {
-		return idProveedor;
+		return id_proveedor;
 	}
 	/**
 	 * @param idProveedor the idProveedor to set
 	 */
 	public void setIdProveedor(Long idProveedor) {
-		this.idProveedor = idProveedor;
+		this.id_proveedor = idProveedor;
 	}
 	/**
 	 * @return the nITProveedor
 	 */
 	public Integer getNITProveedor() {
-		return NITProveedor;
+		return nit_proveedor;
 	}
 	/**
 	 * @param nITProveedor the nITProveedor to set
 	 */
 	public void setNITProveedor(Integer nITProveedor) {
-		NITProveedor = nITProveedor;
+		nit_proveedor = nITProveedor;
 	}
 	/**
 	 * @return the nombreProveedor
 	 */
 	public String getNombreProveedor() {
-		return NombreProveedor;
+		return nombre_proveedor;
 	}
 	/**
 	 * @param nombreProveedor the nombreProveedor to set
 	 */
 	public void setNombreProveedor(String nombreProveedor) {
-		NombreProveedor = nombreProveedor;
+		nombre_proveedor = nombreProveedor;
 	}
 	/**
 	 * @return the direccionProveedor
 	 */
 	public String getDireccionProveedor() {
-		return DireccionProveedor;
+		return direccion_proveedor;
 	}
 	/**
 	 * @param direccionProveedor the direccionProveedor to set
 	 */
 	public void setDireccionProveedor(String direccionProveedor) {
-		DireccionProveedor = direccionProveedor;
+		direccion_proveedor = direccionProveedor;
 	}
 	/**
 	 * @return the telefonoProveedor
 	 */
 	public Integer getTelefonoProveedor() {
-		return TelefonoProveedor;
+		return telefono_proveedor;
 	}
 	/**
 	 * @param telefonoProveedor the telefonoProveedor to set
 	 */
 	public void setTelefonoProveedor(Integer telefonoProveedor) {
-		TelefonoProveedor = telefonoProveedor;
+		telefono_proveedor = telefonoProveedor;
 	}
 	/**
 	 * @return the ciudadProveedor
 	 */
 	public String getCiudadProveedor() {
-		return CiudadProveedor;
+		return ciudad_proveedor;
 	}
 	/**
 	 * @param ciudadProveedor the ciudadProveedor to set
 	 */
 	public void setCiudadProveedor(String ciudadProveedor) {
-		CiudadProveedor = ciudadProveedor;
+		ciudad_proveedor = ciudadProveedor;
 	}
 }

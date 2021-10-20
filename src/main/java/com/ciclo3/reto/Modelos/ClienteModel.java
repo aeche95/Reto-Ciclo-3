@@ -1,19 +1,29 @@
 package com.ciclo3.reto.Modelos;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 @Entity
-@Table(name ="Clientes")
+@Table(name ="clientes_model", schema="grupo56_equipo3")
+@EntityListeners(AuditingEntityListener.class)
 public class ClienteModel {
 	 @Id
 	 @GeneratedValue(strategy= GenerationType.IDENTITY)
-	 private Long idCliente;
-	 private String nombreCliente;
-	 private String apellidoCliente;
+	 @Column(name="id_cliente", columnDefinition="bigint(20)")
+	 private Long id_cliente;
+	 
+	 @Column(name="", columnDefinition="")
+	 private String nombre_cliente;
+	 
+	 @Column(name="", columnDefinition="")
+	 private String apellido_cliente;
 	 
 	 
 	 
@@ -23,23 +33,23 @@ public class ClienteModel {
 
 	public ClienteModel(Long idCliente, String nombreCliente, String apellidoCliente) {
 		super();
-		this.idCliente = idCliente;
-		this.nombreCliente = nombreCliente;
-		this.apellidoCliente = apellidoCliente;
+		this.id_cliente = idCliente;
+		this.nombre_cliente = nombreCliente;
+		this.apellido_cliente = apellidoCliente;
 	}
 
 	/**
 	  * @return the idCliente
 	  */
 	 public Long getIdCliente() {
-	  return idCliente;
+	  return id_cliente;
 	 }
 	 
 	 /**
 	  * @param idCliente the idCliente to set
 	  */
 	 public void setIdCliente(Long idCliente) {
-	  this.idCliente = idCliente;
+	  this.id_cliente = idCliente;
 	 }
 	 
 	 
@@ -47,13 +57,13 @@ public class ClienteModel {
 	  * @return the nombreCliente
 	  */
 	 public String getNombreCliente() {
-	  return nombreCliente;
+	  return nombre_cliente;
 	 }
 	 /**
 	  * @param nombreCliente the nombreCliente to set
 	  */
 	 public void setNombreCliente(String nombreCliente) {
-	  this.nombreCliente = nombreCliente;
+	  this.nombre_cliente = nombreCliente;
 	 }
 	 
 	 
@@ -61,13 +71,13 @@ public class ClienteModel {
 	  * @return the nombreCliente
 	  */
 	 public String getApellidoCliente() {
-	  return apellidoCliente;
+	  return apellido_cliente;
 	 }
 	 /**
 	  * @param nombreCliente the nombreCliente to set
 	  */
 	 public void setApellidoCliente(String nombreCliente) {
-	  this.apellidoCliente = nombreCliente;
+	  this.apellido_cliente = nombreCliente;
 	 }
 	 
 

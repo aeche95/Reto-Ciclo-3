@@ -1,23 +1,41 @@
 package com.ciclo3.reto.Modelos;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 @Entity
-@Table(name="Productos")
+@Table(name="productos_model")
+@EntityListeners(AuditingEntityListener.class)
 public class ProductoModel {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_producto", columnDefinition="bigint(20)")
 	private Long idProducto;
+	
+	@Column(name="codigo_producto", columnDefinition="bigint(20)")
 	private Long codigo_producto;
+	
+	@Column(name="nombre_producto", columnDefinition="varchar(255)")
 	private String nombre_producto;
-	private Long Nit_proveedor;
+	
+	@Column(name="nit_proveedor", columnDefinition="bigint(20)")
+	private Long nit_proveedor;
+	
+	@Column(name="precio_compra", columnDefinition="double")
 	private double precio_compra;
+	
+	@Column(name="iva_compra", columnDefinition="double")
 	private double iva_compra;
+	
+	@Column(name="precio_venta", columnDefinition="double")
 	private double precio_venta;
 	
 	
@@ -73,7 +91,7 @@ public class ProductoModel {
 	 * @return the nit_proveedor
 	 */
 	public Long getNit_proveedor() {
-		return Nit_proveedor;
+		return nit_proveedor;
 	}
 
 
@@ -81,7 +99,7 @@ public class ProductoModel {
 	 * @param nit_proveedor the nit_proveedor to set
 	 */
 	public void setNit_proveedor(Long nit_proveedor) {
-		Nit_proveedor = nit_proveedor;
+		this.nit_proveedor = nit_proveedor;
 	}
 
 
@@ -139,7 +157,7 @@ public class ProductoModel {
 		this.idProducto = idProducto;
 		this.codigo_producto = codigo_producto;
 		this.nombre_producto = nombre_producto;
-		Nit_proveedor = nit_proveedor;
+		this.nit_proveedor = nit_proveedor;
 		this.precio_compra = precio_compra;
 		this.iva_compra = iva_compra;
 		this.precio_venta = precio_venta;
@@ -154,7 +172,7 @@ public class ProductoModel {
 	@Override
 	public String toString() {
 		return "ProductoModel [idProducto=" + idProducto + ", codigo_producto=" + codigo_producto + ", nombre_producto="
-				+ nombre_producto + ", Nit_proveedor=" + Nit_proveedor + ", precio_compra=" + precio_compra
+				+ nombre_producto + ", Nit_proveedor=" + nit_proveedor + ", precio_compra=" + precio_compra
 				+ ", iva_compra=" + iva_compra + ", precio_venta=" + precio_venta + "]";
 	}
 	

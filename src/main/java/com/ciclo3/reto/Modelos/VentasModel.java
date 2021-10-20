@@ -1,20 +1,47 @@
 package com.ciclo3.reto.Modelos;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-public class VentasModel {
+@Table(name="ventas_model",schema="grupo56_equipo3")
+@EntityListeners(AuditingEntityListener.class)
+public class VentasModel implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1748535081781398053L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="codigo_venta", columnDefinition="bigint(20)")
 	private long codigo_venta;
+	
+	@Column(name="iva_venta", columnDefinition="double")
 	private double iva_venta;
+	
+	@Column(name="total_venta", columnDefinition="double")
 	private double total_venta;
+	
+	@Column(name="valor_venta", columnDefinition="double")
 	private double valor_venta;
+	
+	@Column(name="cedula_cliente", columnDefinition="bigint(20)")
 	private long cedula_cliente;
+	
+	@Column(name="cedula_usuario", columnDefinition="bigint(20)")
 	private long cedula_usuario;
+	
+	
 	public long getCodigo_venta() {
 		return codigo_venta;
 	}

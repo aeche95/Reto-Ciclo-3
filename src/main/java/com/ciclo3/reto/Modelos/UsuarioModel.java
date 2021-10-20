@@ -1,17 +1,40 @@
 package com.ciclo3.reto.Modelos;
+import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id; 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener; 
  
-@Entity 
-public class UsuarioModel { 
+@Entity
+@Table(name="usuario_model", schema="grupo56_equipo3")
+@EntityListeners(AuditingEntityListener.class)
+public class UsuarioModel implements Serializable { 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7628466442361484495L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="cedula_usuario", columnDefinition="bigint(20)")
 	private long cedula_usuario; 
+	
+	@Column(name="nombre_usuario", columnDefinition="varchar(255)")
 	private String nombre_usuario; 
+	
+	@Column(name="email_usuario", columnDefinition="varchar(255)")
 	private String email_usuario; 
+	
+	@Column(name="usuario", columnDefinition="varchar(255)")
 	private String usuario; 
+	
+	@Column(name="password", columnDefinition="varchar(255)")
 	private String password;
 	
 	/**
