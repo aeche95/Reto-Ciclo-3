@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-@Table(name="proveedores")
+@Table(name="proveedor_model", schema ="grupo56_equipo3")
 @EntityListeners(AuditingEntityListener.class)
 public class ProveedorModel {
 	
@@ -32,7 +32,7 @@ public class ProveedorModel {
 	@Column(name="telefono_proveedor", columnDefinition="varchar(255)")
 	private Integer telefono_proveedor;
 	
-	@Column(name="ciudad_proveedor", columnDefinition="varvhar(255)")
+	@Column(name="ciudad_proveedor", columnDefinition="varchar(255)")
 	private String ciudad_proveedor;
 	
 	

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-@Table(name="productos_model")
+@Table(name="productos_model", schema="grupo56_equipo3")
 @EntityListeners(AuditingEntityListener.class)
 public class ProductoModel {
 	
