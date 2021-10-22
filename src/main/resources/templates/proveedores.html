@@ -1,35 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Tienda Generica</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel=stylesheet type="text/css" href="css.css"> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="headFragment.html"></head>
 <body>
 
-<header>
-<div>
-      <nav>
-        <div id="menu">
-            <ul>
-                <li id ="item"><a href="usuarios.html">Usuarios</a></li>
-                <li id ="item"><a href="clientes.html">Clientes</a></li>
-                <li id ="item"><a href="proveedores.html"> Proveedores</a></li>
-				<li id ="item"><a href="productos.html"> Productos</a></li>
-                <li id ="item"><a href="ventas.html"> Ventas</a></li>
-                <li id ="item"><a href="reportes.html"> Resportes</a></li>    
-            </ul>    
-        </div>
-      </nav>
-</div>
-</header>
-
+<header th:insert="headerFragment.html"></header>
 
 <div class="jumbotron text-center">
   <h1>CONFIGURACION</h1>
@@ -43,26 +17,26 @@
 	
     </div>
     <div class="col-sm-8">
-	<form>
+	<form action="#" th:action="@{/proveedores}" th:object="${proveedor}" method="post">
     <table class="table table-borderless">
     <thead>
       <tr>
         <th>NIT</th>
-        <th><input type="text" id="nit" name="nit"></th>
+        <th><input type="text" id="nit" name="nit" th:field="*{nit_proveedor}"></th>
 		<th>Telefono</th>
-		<th><input type="text" id="telefono" name="telefono"></th>
+		<th><input type="text" id="telefono" name="telefono" th:field="*{telefono_proveedor}"></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th>Nombre Proveedor</th>
-        <th><input type="text" id="proveedor" name="proveedor"></th>
+        <th><input type="text" id="proveedor" name="proveedor" th:field="*{nombre_proveedor}"></th>
 		<th>Ciudad</th>
-        <td><input type="text" id="ciudad" name="ciudad"></td>
+        <td><input type="text" id="ciudad" name="ciudad" th:field="*{ciudad_proveedor}"></td>
       </tr>
       <tr>
         <th>Direccion</th>
-        <th><input type="text" id="direccion" name="direccion"></th>
+        <th><input type="text" id="direccion" name="direccion" th:field="*{direccion_proveedor}"></th>
         <td></td>
 		<td></td>
       </tr>

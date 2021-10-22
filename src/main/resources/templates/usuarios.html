@@ -1,34 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <title>Tienda Generica</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel=stylesheet type="text/css" href="css.css"> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
+<head th:insert="headFragment.html"></head>
 <body>
 
-<header>
-<div>
-      <nav>
-        <div id="menu">
-            <ul>
-                <li id ="item"><a href="usuarios.html">Usuarios</a></li>
-                <li id ="item"><a href="clientes.html">Clientes</a></li>
-                <li id ="item"><a href="proveedores.html"> Proveedores</a></li>
-				<li id ="item"><a href="productos.html"> Productos</a></li>
-                <li id ="item"><a href="ventas.html"> Ventas</a></li>
-                <li id ="item"><a href="reportes.html"> Resportes</a></li>    
-            </ul>    
-        </div>
-      </nav>
-</div>
-</header>
+<header th:insert="headerFragment.html"></header>
 
 
 <div class="jumbotron text-center">
@@ -43,26 +18,26 @@
 	
     </div>
     <div class="col-sm-8">
-	<form>
+	<form action="#" th:action="@{/usuarios}" th:object="${usuario}" method="post">
     <table class="table table-borderless">
     <thead>
       <tr>
         <th>Cedula</th>
-        <th><input type="text" id="cedula" name="cedula"></th>
+        <th><input type="text" id="cedula" name="cedula" th:field="*{cedula_usuario}"></th>
 		<th>Usuario</th>
-		<th><input type="text" id="user" name="user"></th>
+		<th><input type="text" id="user" name="user" th:field="*{usuario}"></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th>Nombre Completo</th>
-        <th><input type="text" id="nombre" name="nombre"></th>
-		<th>ContraseÃ±a</th>
-        <td><input type="text" id="password" name="password"></td>
+        <th><input type="text" id="nombre" name="nombre" th:field="*{nombre_usuario}"></th>
+		<th>Contraseña</th>
+        <td><input type="text" id="password" name="password" th:field="*{password}"></td>
       </tr>
       <tr>
         <th>Correo Electronico</th>
-        <th><input type="text" id="correo" name="correo"></th>
+        <th><input type="text" id="correo" name="correo" th:field="*{email_usuario}"></th>
         <td></td>
 		<td></td>
       </tr>
